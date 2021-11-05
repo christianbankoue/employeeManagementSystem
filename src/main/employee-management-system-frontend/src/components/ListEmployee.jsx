@@ -1,7 +1,7 @@
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
-import { ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonGroup, Button, Table } from 'react-bootstrap';
 import EmployeeService from '../services/EmployeeService';
 
 class ListEmployee extends Component {
@@ -29,9 +29,10 @@ class ListEmployee extends Component {
             <div>
                 <h2 className="text-center">Employees List</h2>
                 <div className="row">
-                    <table className="table table-striped table-bordered">
+                    <Table striped bordered hover variant="primary" >
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>First name</th>
                                 <th>Last name</th>
                                 <th>Email</th>
@@ -42,6 +43,7 @@ class ListEmployee extends Component {
                             {
                                 this.state.employees.map(employee => 
                                 <tr key={employee.id}>
+                                    <td>{employee.id}</td>
                                     <td>{employee.firstname}</td>
                                     <td>{employee.lastname}</td>
                                     <td>{employee.email}</td>
@@ -54,7 +56,7 @@ class ListEmployee extends Component {
                                 </tr>)
                             }
                         </tbody>
-                    </table>
+                    </Table>
                 </div>
             </div>
         );

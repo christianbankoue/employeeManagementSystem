@@ -1,11 +1,22 @@
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import Footer from './components/Footer';
+import Header from './components/Header';
 import ListEmployee from './components/ListEmployee';
+import "./App.css"
 
 function App() {
   return (
-    <Container>
-      <ListEmployee />
-    </Container>
+    <>
+    <Header/>
+      <Container>
+        <Row>
+          <Col lg={12} className={"margin-top"}>
+            <ListEmployee />
+          </Col>
+        </Row>
+      </Container>
+      <Footer/>
+    </>
   );
 }
 
