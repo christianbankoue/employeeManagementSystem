@@ -6,12 +6,10 @@ class Header extends Component {
         return (
             <Navbar bg="dark" variant="dark" >
                 <Container>
-                    <Nav className="me-auto" className="navbar-expand-md">
+                    <Nav className="me-auto">
                         <Navbar.Brand href="http://localhost:3000/" className="text-light">
                             Employee Management System
                         </Navbar.Brand>
-                        <Container></Container>
-                        <Nav.Link></Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

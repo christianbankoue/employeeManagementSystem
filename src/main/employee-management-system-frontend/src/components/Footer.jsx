@@ -7,7 +7,7 @@ function Footer() {
 
     useEffect(()=>{
         setYear(new Date().getFullYear())
-    }, year)
+    }, [year])
     return (
            <Navbar bg="dark" variant="dark" fixed="bottom">
                <Container>
