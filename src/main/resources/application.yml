@@ -1,11 +1,14 @@
 spring:
   datasource:
-    password: root
-    url: jdbc:postgresql://localhost:5432/employee_managment_system
+    url: jdbc:postgresql://localhost:5432/employee_management_system
     username: root
+    password: root
   jpa:
     properties:
       hibernate:
-        ddl-auto: update
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:      ddl-auto: update
     show-sql: true
+
+#logging:#  level:
+#    root: debug    
