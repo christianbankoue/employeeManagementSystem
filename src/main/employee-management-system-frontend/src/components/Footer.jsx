@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 
 function Footer() {
@@ -9,7 +9,7 @@ function Footer() {
         setYear(new Date().getFullYear())
     }, [year])
     return (
-           <Navbar bg="dark" variant="dark" fixed="bottom">
+           <Navbar bg="dark" variant="dark" fixed="bottom" style={{marginBottom:"0px"}}>
                <Container>
                 <span className="text-muted">All Rights Reserved {year} @Cbankoue</span>
                </Container>

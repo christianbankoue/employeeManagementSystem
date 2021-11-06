@@ -23,12 +23,19 @@ class ListEmployee extends Component {
                                 console.log(error)
                             })
     }
+
+    onAddEmployee = () => {
+        // this.props.history.push("/add-employee")
+    }
     
     render() {
         return (
             <div>
                 <h2 className="text-center">Employees List</h2>
                 <div className="row">
+                    <div style={{padding:"0px"}}>
+                        <Button variant="primary" onClick={this.onAddEmployee()}>Add Employee</Button>
+                    </div>
                     <Table striped bordered hover variant="primary" >
                         <thead>
                             <tr>
