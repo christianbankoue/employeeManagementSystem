@@ -1,10 +1,11 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import ListEmployee from './components/ListEmployee';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import ListEmployees from './components/ListEmployees';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "./App.css";
 import CreateEmployee from './components/CreateEmployee';
+import UpdateEmployee from './components/UpdateEmployee';
 
 function App() {
   
@@ -15,11 +16,12 @@ function App() {
         <Container>
             <Row>
               <Col lg={12} className={"margin-top"}>
-              <Switch>
-                <Route path="/" component={ListEmployee}/>
-                <Route path="/employees" component={ListEmployee}/>
-                <Route path="/add-employee" component={CreateEmployee}/>
-              </Switch> 
+              <Routes>
+                <Route path="/" element={<ListEmployees />}/>
+                <Route path="/employees" element={<ListEmployees />}/>
+                <Route path="/add-employee"element = {<CreateEmployee />}/>
+                <Route path="/update-employee/:id" element ={<UpdateEmployee />}/>
+              </Routes> 
               </Col>
             </Row>
         </Container>

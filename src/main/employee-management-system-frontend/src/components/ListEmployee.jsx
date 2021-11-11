@@ -2,6 +2,7 @@ import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import { ButtonGroup, Button, Table } from 'react-bootstrap';
+import { Navigate } from 'react-router';
 import EmployeeService from '../services/EmployeeService';
 
 class ListEmployee extends Component {
@@ -12,6 +13,9 @@ class ListEmployee extends Component {
             employees: []
         }
         
+        this.onAddEmployee = this.onAddEmployee.bind(this)
+        this.onUpdateEmployee = this.onUpdateEmployee.bind(this);
+        this.onDeleteEmployee = this.onDeleteEmployee.bind(this);
     }
     componentDidMount(){
         EmployeeService.getEmployees()
@@ -25,8 +29,17 @@ class ListEmployee extends Component {
     }
 
     onAddEmployee = () => {
-        // this.props.history.push("/add-employee")
+        <Navigate to="/add-employee" replace = {false} state={null}/>
     }
+
+    onUpdateEmployee = (id) =>{
+        // this.props.n.push(`/update-employee/${id}`)
+    }
+
+    onDeleteEmployee = (id) =>{
+        
+    }
+
     
     render() {
         return (
@@ -50,14 +63,14 @@ class ListEmployee extends Component {
                             {
                                 this.state.employees.map(employee => 
                                 <tr key={employee.id}>
-                                    <td>{employee.id}</td>
+                                    <td>{this.state.employees.indexOf(employee) + 1}</td>
                                     <td>{employee.firstname}</td>
                                     <td>{employee.lastname}</td>
                                     <td>{employee.email}</td>
                                     <td>
                                         <ButtonGroup>
-                                            <Button variant="success"><FontAwesomeIcon icon={faEdit}/></Button>
-                                            <Button variant="danger"><FontAwesomeIcon icon={faTrash}/></Button>
+                                            <Button variant="success" onClick={(e) => this.onUpdateEmployee(employee.id)}><FontAwesomeIcon icon={faEdit}/></Button>
+                                            <Button variant="danger" onClick={(e) => this.onDeleteEmployee(employee.id)}><FontAwesomeIcon icon={faTrash}/></Button>
                                         </ButtonGroup>
                                     </td>
                                 </tr>)
