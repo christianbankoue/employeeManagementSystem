@@ -6,7 +6,6 @@ const Formulare = (props) => {
     const navigate = useNavigate()
 
     const onCancel = () => {
-        console.log("cancel is done")
         navigate("/employees")
     }
 

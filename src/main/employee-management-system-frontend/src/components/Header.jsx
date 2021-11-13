@@ -12,7 +12,7 @@ class Header extends Component {
                             Employee Management System
                         </Navbar.Brand>
                         <Link to="/employees" className="nav-link">List Employees</Link>
-                        <Link to="/add-employee" className="nav-link">Add Employee</Link>
+                        <Link to="/add-employee/_add" className="nav-link">Add Employee</Link>
                     </Nav>
                 </Container>
             </Navbar>

@@ -23,9 +23,9 @@ class EmployeeService {
         })
     }
 
-    updateEmployee = async (employeeid, employee) => {
+    updateEmployee = (employeeid, employee) => {
 
-        const result = await axios.put(EMPLOYEE_API_BASE_URL + "/" + employeeid, employee, {
+        const result = axios.put(EMPLOYEE_API_BASE_URL + "/" + employeeid, employee, {
             headers: {
               "Content-Type": "application/json",
               'Content-Encoding': 'gzip'
@@ -34,6 +34,10 @@ class EmployeeService {
 
         return result
         
+    }
+
+    deleteEmployee = (employeeid) => {
+        return axios.delete(EMPLOYEE_API_BASE_URL + "/" + employeeid)
     }
 
 }
