@@ -5,6 +5,7 @@ import ListEmployees from './components/ListEmployees';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "./App.css";
 import CreateEmployee from './components/CreateEmployee';
+import ViewEmployee from './components/ViewEmployee';
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/employees" element={<ListEmployees />}/>
                 <Route path="/add-employee/:id" element ={<CreateEmployee />}/>
                 <Route path="/employees" element={<ListEmployees />}/>
+                <Route path="/view-employee/:id" element={<ViewEmployee />} />
               </Routes> 
               </Col>
             </Row>

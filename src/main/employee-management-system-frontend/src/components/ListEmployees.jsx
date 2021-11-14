@@ -1,4 +1,4 @@
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { ButtonGroup,Button, Table} from "react-bootstrap";
@@ -71,6 +71,7 @@ const ListEmployees = () =>{
                                         <ButtonGroup>
                                             <Button variant="primary" onClick={(e) => onUpdateEmployee(employee.id)}><FontAwesomeIcon icon={faEdit}/></Button>
                                             <Button variant="danger" onClick={(e) => onDeleteEmployee(employee.id)}><FontAwesomeIcon icon={faTrash}/></Button>
+                                            <Button variant="success" onClick={(e) => navigate(`/view-employee/${employee.id}`)}><FontAwesomeIcon icon={faEye}/></Button>
                                         </ButtonGroup>
                                     </td>
                                 </tr>)
