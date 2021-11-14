@@ -20,7 +20,7 @@ const ViewEmployee = () => {
         }).catch(error => {
             console.log(error)
         })
-    }, [])
+    })
 
     return(
         <div>
